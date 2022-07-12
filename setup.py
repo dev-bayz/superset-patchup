@@ -14,7 +14,7 @@ setup(
     packages=find_packages(exclude=['docs', 'tests']),
     install_requires=[
         'apache-superset',
-        'authlib',
+        'authlib==0.14.3',
         'future',
         'requests',
     ],
