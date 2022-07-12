@@ -105,6 +105,7 @@ class AuthOAuthView(SupersetAuthOAuthView):
 
         state = self.generate_state().decode('utf-8')
         logging.debug("State %s",state)
+        logging.debug("Session %s",session)
 
         # Newest version of Superset for OpenLMIS
         #stateString = state.decode('utf-8')
