@@ -127,7 +127,7 @@ class AuthOAuthView(SupersetAuthOAuthView):
             logging.debug("Custom-Api-Token is present")
             resp = {"access_token": request.headers.get("Custom-Api-Token")}
         else:
-            logging.debug("Getting accesstoken")
+            logging.debug("Getting accesstoken seesion %s",session)
             resp = self.appbuilder.sm.oauth_remotes[provider].authorize_access_token()
         if resp is None:
             flash("You denied the request to sign in.", "warning")
