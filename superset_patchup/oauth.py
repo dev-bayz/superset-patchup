@@ -103,7 +103,7 @@ class AuthOAuthView(SupersetAuthOAuthView):
         # 'redirect_url' should be available in the session
         session['%s_oauthredir' % provider] = redirect_url
 
-        state = self.generate_state()
+        state = self.generate_state().decode('utf-8')
         logging.debug("State %s",state)
 
         # Newest version of Superset for OpenLMIS
