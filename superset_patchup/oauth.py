@@ -110,6 +110,7 @@ class AuthOAuthView(SupersetAuthOAuthView):
         stateString = state.decode('utf-8')
         session[f'_{provider}_authlib_state_'] = stateString
         session[f'_{provider}_authlib_redirect_uri_'] = redirect_url
+        session[f'{provider}_state'] = stateString
         logging.debug("Session %s",session)
 
         return make_response(jsonify(
